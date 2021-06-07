@@ -12,11 +12,9 @@
                 <%= post.postedBy.username %>
             </p>
             <img src=<%= post.imageUrl %> alt=""/>
-            <ol>Liked by: 
-                <% post.likedBy.forEach(function(user) {%>
-                    <li><%= user.username %></li> 
-                <%}); %>
-            </ol>  
+            <p>Likes: 
+                <%= post.likedBy.length %>
+            </p>  
             <form action="/posts/<%= post.id %>/like/" method="post">
                 <button type="submit">Like</button>
             </form>
