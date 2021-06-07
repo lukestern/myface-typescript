@@ -15,6 +15,9 @@
             <p>Likes: 
                 <%= post.likedBy.length %>
             </p>  
+            <p>Dislikes: 
+                <%= post.dislikedBy.length %>
+            </p>  
             <form action="/posts/<%= post.id %>/like/" method="post">
                 <button type="submit">Like</button>
             </form>
