@@ -12,11 +12,8 @@
                 <%= post.postedBy.username %>
             </p>
             <img src=<%= post.imageUrl %> alt=""/>
-            <p>Likes: 
-                <%= post.likedBy.length %>
-            </p>  
-            <p>Dislikes: 
-                <%= post.dislikedBy.length %>
+            <p>
+                👍: <%= post.likedBy.length %> 👎: <%= post.dislikedBy.length %>
             </p>  
             <form action="/posts/<%= post.id %>/like/" method="post">
                 <button type="submit">Like</button>
@@ -27,11 +24,11 @@
         </li>
     <% }); %>
 </ul>
-<%if (next) { %>
-    <a href="<%= next %>">Next</a>
-<% } %>
 <%if (previous) { %>
     <a href="<%= previous %>">Previous</a>
+<% } %>
+<%if (next) { %>
+    <a href="<%= next %>">Next</a>
 <% } %>
 </body>
 <%- include('_footer') -%>
