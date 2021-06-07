@@ -11,7 +11,18 @@
                 <time datetime="YYYY-MM-DD HH:MM:SS"><%= post.createdAt %></time>
                 <%= post.postedBy.username %>
             </p>
-            <img src=<%= post.imageUrl %> alt="">
+            <img src=<%= post.imageUrl %> alt=""/>
+            <ol>Liked by: 
+                <% post.likedBy.forEach(function(user) {%>
+                    <li><%= user.username %></li> 
+                <%}); %>
+            </ol>  
+            <form action="/posts/<%= post.id %>/like/" method="post">
+                <button type="submit">Like</button>
+            </form>
+            <form action="/posts/<%= post.id %>/dislike/" method="post">
+                <button type="submit">Dislike</button>
+            </form>
         </li>
     <% }); %>
 </ul>
