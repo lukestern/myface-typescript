@@ -15,12 +15,16 @@
             <p>
                 👍: <%= post.likedBy.length %> 👎: <%= post.dislikedBy.length %>
             </p>  
-            <form action="/posts/<%= post.id %>/like/" method="post">
-                <button type="submit">Like</button>
-            </form>
-            <form action="/posts/<%= post.id %>/dislike/" method="post">
-                <button type="submit">Dislike</button>
-            </form>
+            <%if (post.likedBy.filter(user => user.id === 1).length === 0) { %>
+                <form action="/posts/<%= post.id %>/like/" method="post">
+                    <button type="submit">👍</button>
+                </form>
+            <% } %>
+            <%if (post.dislikedBy.filter(user => user.id === 1).length === 0) { %>
+                <form action="/posts/<%= post.id %>/dislike/" method="post">
+                    <button type="submit">👎</button>
+                </form>
+            <% } %>
         </li>
     <% }); %>
 </ul>
