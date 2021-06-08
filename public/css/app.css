@@ -38,6 +38,16 @@
         border: none;
     }
 
+    button {
+        border: none;
+    }
+
+    button:hover {
+        background-color: rgb(5, 173, 173) ;
+        color: aliceblue;
+        border: none;
+    }
+
     .prev-next-button {
         margin: 0% 0% 0% 2%;
         background-color: gray;
