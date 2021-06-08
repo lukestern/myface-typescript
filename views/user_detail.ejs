@@ -1,11 +1,16 @@
 <html lang="en-gb">
 <%- include('_head') -%>
-<%- include('_header') -%>
-<body>
-    <img src="" alt="" srcset=<%= coverImageUrl %>/>
-    <h1><%= name %></h1>
-    <p>user name: <%= username %> | email: <%= email %></p>
-    <img src="" alt="" srcset=<%= profileImageUrl %>/>
-</body>
-<%- include('_footer') -%>
+    <%- include('_header') -%>
+
+        <body>
+            <img src="" alt="" srcset=<%=coverImageUrl %>/>
+            <h1>
+                <%= name %>
+            </h1>
+            <p>user name: <%= username %> | email: <%= email %>
+            </p>
+            <img src="" alt="" srcset=<%=profileImageUrl %>/>
+        </body>
+        <%- include('_footer') -%>
+
 </html>

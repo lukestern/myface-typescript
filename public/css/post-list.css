@@ -1,0 +1,87 @@
+.post-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding-inline-start: 0%;
+}
+
+.post-listing {
+    min-width: 330px;
+    max-width: 400px;
+    flex-grow: 1;
+    align-self: end;
+    padding: 2% 1%;
+}
+
+p {
+    margin: 1% 1% 1% 2%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.post-interaction-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post-interaction-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.like-button {
+    margin: 5% 2%;
+}
+
+.dislike-button {
+    margin: 5% 2%;
+}
+
+@media only screen and (max-width: 400px) {
+    .post-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style-type: none;
+        padding-inline-start: 0%;
+    }
+    
+    .post-listing {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        min-width: 330px;
+        flex-grow: 1;
+        align-self: end;
+        padding: 0% 0% 0% 0%;
+    }
+    p {
+        margin: 1% 1% 1% 2%;
+    }
+    img {
+        max-width: 100%;
+    }
+    .post-interaction-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .post-interaction-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .like-button {
+        margin: 5% 2%;
+    }
+    .dislike-button {
+        margin: 5% 2%;
+    }
+}
