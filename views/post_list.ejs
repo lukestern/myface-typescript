@@ -2,46 +2,54 @@
 <%- include('_head') -%>
     <%- include('_header') -%>
 
+
         <body>
-                <ul class="post-list">
-                    <% results.forEach(function(post) {%>
-                        <li class="post-listing">
-                            <h2 class="post-title">
-                                <%= post.message %>
-                            </h2>
-                            <p>
-                                <time datetime="YYYY-MM-DD HH:MM:SS">
-                                    <%= post.createdAt %>
-                                </time>
-                                <%= post.postedBy.username %>
-                            </p>
-                            <img src=<%=post.imageUrl %> alt=""/>
-                            <div class="post-interaction-container">
+            <div class="page-container">
+                <div class="content-wrap">
+                    <ul class="post-list">
+                        <% results.forEach(function(post) {%>
+                            <li class="post-listing">
+                                <h2 class="post-title">
+                                    <%= post.message %>
+                                </h2>
                                 <p>
-                                    <%= post.likedBy.length %>: 👍 <%= post.dislikedBy.length %>: 👎
+                                    <time datetime="YYYY-MM-DD HH:MM:SS">
+                                        <%= post.createdAt %>
+                                    </time>
+                                    <%= post.postedBy.username %>
                                 </p>
-                                <div class="post-interaction-buttons">
-                                    <%if (post.likedBy.filter(user=> user.id === 1).length === 0
-                                    && post.dislikedBy.filter(user => user.id === 1).length === 0) { %>
-                                    <form class="interaction-form" action="/posts/<%= post.id %>/like/" method="post">
-                                        <button class="interaction-button" type="submit">Like</button>
-                                    </form>
-                                    <form class="interaction-form" action="/posts/<%= post.id %>/dislike/" method="post">
-                                        <button class="interaction-button" type="submit">Dislike</button>
-                                    </form>
-                                    <% } %>
+                                <img src=<%=post.imageUrl %> alt=""/>
+                                <div class="post-interaction-container">
+                                    <p>
+                                        <%= post.likedBy.length %>: 👍 <%= post.dislikedBy.length %>: 👎
+                                    </p>
+                                    <div class="post-interaction-buttons">
+                                        <%if (post.likedBy.filter(user=> user.id === 1).length === 0
+                                            && post.dislikedBy.filter(user => user.id === 1).length === 0) { %>
+                                            <form class="interaction-form" action="/posts/<%= post.id %>/like/"
+                                                method="post">
+                                                <button class="interaction-button" type="submit">Like</button>
+                                            </form>
+                                            <form class="interaction-form" action="/posts/<%= post.id %>/dislike/"
+                                                method="post">
+                                                <button class="interaction-button" type="submit">Dislike</button>
+                                            </form>
+                                            <% } %>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <% }); %>
-                </ul>
-                <%if (previous) { %>
-                    <button class="main-button"><a href="<%= previous %>">Previous</a></button>
-                    <% } %>
-                        <%if (next) { %>
-                            <button class="main-button"><a href="<%= next %>">Next</a></button>
-                            <% } %>
+                            </li>
+                            <% }); %>
+                    </ul>
+                    <%if (previous) { %>
+                        <button class="main-button"><a href="<%= previous %>">Previous</a></button>
+                        <% } %>
+                            <%if (next) { %>
+                                <button class="main-button"><a href="<%= next %>">Next</a></button>
+                                <% } %>
+                </div>
+                <%- include('_footer') -%>
+            </div>
         </body>
-        <%- include('_footer') -%>
+
 
 </html>
