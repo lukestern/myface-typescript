@@ -36,9 +36,23 @@
         margin-bottom: 4px;
     }
 
-    nav a {
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2.5rem;
+    }
+
+    .nav-container a {
         text-decoration: none;
-        padding: 1%;
+    }
+
+    .nav-options {
+        display: flex;
+    }
+
+    .nav-options a {
+        padding: 0 2.5rem;
+        text-decoration: none;
     }
 
     nav a:hover {
@@ -153,14 +167,28 @@
             size: 14px;
         }
         nav {
-            border: 0;
-            margin: 0%;
-            padding: 2% 0% 2% 0%;
+            background-color: #151820;
             width: 100%;
-        }
-        nav a {
+            margin-bottom: 4px;
+        }    
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+        }    
+        .nav-container a {
+            padding: 0;
             text-decoration: none;
-            padding: 2%;
+        }    
+        .nav-options {
+            display: flex;
+        }    
+        .nav-options a {
+            padding: 0.5rem;
+            text-decoration: none;
+        }    
+        nav a:hover {
+            color: #2985FF;
         }
         .title {
             line-height: 32px;
@@ -174,7 +202,6 @@
             line-height: 16px;
             size: 10px;
         }
-    
         .secondary-bold {
             line-height: 20px;
             size: 12px;

@@ -1,5 +1,9 @@
 .cover-image {
+    position: absolute;
     width: 100vw;
+    z-index: 1;
+    top: 0;
+    left: 0;
 }
 
 .profile-image {
@@ -10,11 +14,31 @@
 }
 
 .user-profile-header {
+    background-color: rgba(37,42,56, 0.56);
+    position: absolute;
     display: flex;
     padding-left: 2%;
+    z-index: 2;
+    top: 320px;
+    left: 0;
+    width: 100vw;
 }
 
 .user-details {
     list-style-type: none;
     padding-left: 16px;
+}
+
+
+@media only screen and (max-width: 400px) {
+    .user-profile-header {
+        background-color: rgba(37,42,56, 0.56);
+        position: absolute;
+        display: flex;
+        padding-left: 2%;
+        z-index: 2;
+        top: 80px;
+        left: 0;
+        width: 100vw;
+    }
 }
