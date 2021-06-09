@@ -3,9 +3,6 @@
     <%- include('_header') -%>
 
         <body>
-            <h1>Posts</h1>
-
-                <button class='create-new-button'><a href="/posts/create">Create Post</a></button>
                 <ul class="post-list">
                     <% results.forEach(function(post) {%>
                         <li class="post-listing">
@@ -26,11 +23,11 @@
                                 <div class="post-interaction-buttons">
                                     <%if (post.likedBy.filter(user=> user.id === 1).length === 0
                                     && post.dislikedBy.filter(user => user.id === 1).length === 0) { %>
-                                    <form class="like-button" action="/posts/<%= post.id %>/like/" method="post">
-                                        <button type="submit">👍</button>
+                                    <form class="interaction-form" action="/posts/<%= post.id %>/like/" method="post">
+                                        <button class="interaction-button" type="submit">Like</button>
                                     </form>
-                                    <form class="dislike-button" action="/posts/<%= post.id %>/dislike/" method="post">
-                                        <button type="submit">👎</button>
+                                    <form class="interaction-form" action="/posts/<%= post.id %>/dislike/" method="post">
+                                        <button class="interaction-button" type="submit">Dislike</button>
                                     </form>
                                     <% } %>
                                 </div>
@@ -39,10 +36,10 @@
                         <% }); %>
                 </ul>
                 <%if (previous) { %>
-                    <button class="prev-next-button"><a href="<%= previous %>">Previous</a></button>
+                    <button class="main-button"><a href="<%= previous %>">Previous</a></button>
                     <% } %>
                         <%if (next) { %>
-                            <button class="prev-next-button"><a href="<%= next %>">Next</a></button>
+                            <button class="main-button"><a href="<%= next %>">Next</a></button>
                             <% } %>
         </body>
         <%- include('_footer') -%>

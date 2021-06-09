@@ -1,0 +1,20 @@
+.cover-image {
+    width: 100vw;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: auto;
+    height: 135px;
+    border: 2px solid #DCDCDC;
+}
+
+.user-profile-header {
+    display: flex;
+    padding-left: 2%;
+}
+
+.user-details {
+    list-style-type: none;
+    padding-left: 16px;
+}

@@ -1,15 +1,22 @@
 <html lang="en-gb">
 <%- include('_head') -%>
     <%- include('_header') -%>
-
         <body>
-            <img src="" alt="" srcset=<%=coverImageUrl %>/>
-            <h1>
-                <%= name %>
-            </h1>
-            <p>user name: <%= username %> | email: <%= email %>
-            </p>
-            <img src="" alt="" srcset=<%=profileImageUrl %>/>
+            <img class="cover-image" src="" alt="" srcset=<%=coverImageUrl %>/>
+            <div class="user-profile-header">
+                <img class="profile-image" src="" alt="" srcset=<%=profileImageUrl %>/>
+                <ul class="user-details">
+                    <li><h1 class="title"><%= name %></h1></li>
+                    <li><p  class="secondary-bold"><%= username %></p></li>
+                    <li><p class="secondary"><%= email %></p></li>
+                </ul>
+            </div>
+            
+
+            
+
+            
+            
         </body>
         <%- include('_footer') -%>
 

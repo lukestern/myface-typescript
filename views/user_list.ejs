@@ -3,8 +3,7 @@
     <%- include('_header') -%>
 
         <body>
-            <h1>Users</h1>
-            <button class='create-new-button'><a href="/users/create">Create User</a></button>
+            <button class='main-button'><a href="/users/create">Create User</a></button>
             <ul class="user-list">
                 <% results.forEach(function(user) {%>
                     <li class="user-listing">
@@ -15,10 +14,10 @@
                     <% }); %>
             </ul>
             <%if (previous) { %>
-                <button class="prev-next-button"><a href="<%= previous %>">Previous</a></button>
+                <button class="main-button"><a href="<%= previous %>">Previous</a></button>
                 <% } %>
                     <%if (next) { %>
-                        <button class="prev-next-button"><a href="<%= next %>">Next</a></button>
+                        <button class="main-button"><a href="<%= next %>">Next</a></button>
                         <% } %>
         </body>
         <%- include('_footer') -%>

@@ -32,16 +32,21 @@ img {
 .post-interaction-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
-.like-button {
-    margin: 5% 2%;
+.interaction-button {
+    color: #2985FF;
+    border: 1px solid #2985FF;
+    background-color: #252A38;
+    padding: 4px;
 }
 
-.dislike-button {
-    margin: 5% 2%;
+.interaction-form {
+    padding: 2px;
+    margin: 2px;
 }
+
 
 @media only screen and (max-width: 400px) {
     .post-list {
@@ -52,7 +57,6 @@ img {
         list-style-type: none;
         padding-inline-start: 0%;
     }
-    
     .post-listing {
         display: flex;
         flex-direction: column;
@@ -74,14 +78,10 @@ img {
         justify-content: space-between;
     }
     .post-interaction-buttons {
+        padding: 4px;
+        margin: 0% 0% 0% 2%;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-    }
-    .like-button {
-        margin: 5% 2%;
-    }
-    .dislike-button {
-        margin: 5% 2%;
     }
 }
