@@ -1,8 +1,10 @@
 <html lang="en-gb">
 <%- include('_head') -%>
+<%- include('_mobile_menu') -%>
     <%- include('_header') -%>
 
         <body>
+            <div class="page-container" id="page-container">
             <h1>Create User</h1>
             <form class="create-item-form" method="post" action="/users/create">
                 <label class="form-item">
@@ -27,7 +29,9 @@
                 </label>
                 <button class="submit-button" type="submit">Submit</button>
             </form>
+            <%- include('_footer') -%>
+            </div>
         </body>
-        <%- include('_footer') -%>
+       
 
 </html>
