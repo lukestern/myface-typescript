@@ -1,25 +1,30 @@
 <html lang="en-gb">
 <%- include('_head') -%>
-    <%- include('_header') -%>
+    <%- include('_mobile_menu') -%>
+        <%- include('_header') -%>
 
-        <body>
-            <button class='main-button'><a href="/users/create">Create User</a></button>
-            <ul class="user-list">
-                <% results.forEach(function(user) {%>
-                    <li class="user-listing">
-                        <a href="/users/<%= user.id %>/">
-                            <%= user.name %>
-                        </a>
-                    </li>
-                    <% }); %>
-            </ul>
-            <%if (previous) { %>
-                <button class="main-button"><a href="<%= previous %>">Previous</a></button>
-                <% } %>
-                    <%if (next) { %>
-                        <button class="main-button"><a href="<%= next %>">Next</a></button>
-                        <% } %>
-            <%- include('_footer') -%>
-        </body>
+            <body>
+                <div class="page-container" id="page-container">
+                    <div class="content-wrap">
+                    <button class='main-button'><a href="/users/create">Create User</a></button>
+                    <ul class="user-list">
+                        <% results.forEach(function(user) {%>
+                            <li class="user-listing">
+                                <a href="/users/<%= user.id %>/">
+                                    <%= user.name %>
+                                </a>
+                            </li>
+                            <% }); %>
+                        </ul>
+                            <%if (previous) { %>
+                                <button class="main-button"><a href="<%= previous %>">Previous</a></button>
+                                <% } %>
+                            <%if (next) { %>
+                                <button class="main-button"><a href="<%= next %>">Next</a></button>
+                                <% } %>
+                            </div>
+                                    <%- include('_footer') -%>
+                </div>
+            </body>
 
 </html>
